@@ -1,41 +1,104 @@
-body{
+*{
     margin:0;
-    height:100vh;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.container{
-    width:100%;
+body{
+
+    width:100vw;
     height:100vh;
 
-    display:flex;
-    flex-direction:column;
+    overflow:hidden;
 
-    align-items:center;
+    background-image:url("images/background.jpg");
+    background-size:cover;
+    background-position:center;
 
     position:relative;
+
+    font-family:sans-serif;
 }
+
+/* 말풍선 */
+
 .speech-bubble{
 
     position:absolute;
-    top:12vh;
 
-    width:80%;
+    top:7vh;
+    left:50%;
 
-    padding:25px;
+    transform:translateX(-50%);
+
+    width:85%;
+
+    background:white;
+
+    padding:24px;
+
+    border-radius:999px;
 
     text-align:center;
 
     font-size:2rem;
+    font-weight:bold;
 
-    border-radius:999px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
 
+    z-index:10;
 }
+
+/* 꼬리 */
+
+.speech-bubble::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-18px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-left:18px solid transparent;
+    border-right:18px solid transparent;
+    border-top:24px solid white;
+}
+
+/* 타이머 */
+
+.timer{
+
+    position:absolute;
+
+    top:24vh;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:white;
+
+    font-size:3rem;
+    font-weight:bold;
+
+    text-shadow:0 0 10px black;
+
+    z-index:10;
+}
+
+/* 캐릭터 */
+
 .character{
 
     position:absolute;
 
-    width:65vw;
-    max-width:450px;
+    left:50%;
+    bottom:0;
 
-    bottom:10vh;
+    transform:translateX(-50%);
+
+    width:80vw;
+    max-width:550px;
 }
